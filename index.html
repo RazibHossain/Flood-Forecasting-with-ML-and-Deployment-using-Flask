@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html >
+<head>
+  
+  
+</head>
+
+<body style="background-color: #ABFFFA">
+ <div class="login">
+	<h1 style="text-align:center">Forecasting Flood Severity in Bangladesh Using Machine Learning Approach</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post"> 
+	
+		<table>
+		<tr>
+		<td width="40%" style="text-align: right"> Basin</td>
+		<td width="60%"> <input type="number" name="a" placeholder="Basin" required="required" /></td>
+		</tr>
+		
+		<tr><td>&nbsp</td><td>&nbsp</td><tr>
+		
+		<tr>
+		<td width="40%" style="text-align: right">Elevation</td>
+		<td width="60%"> <input type="number" name="elevation" placeholder="Elevation" required="required" /></td>
+		</tr>
+		<tr><td>&nbsp</td><td>&nbsp</td><tr>
+		<tr>
+		<td width="40%" style="text-align: right"> Danger Level(m)</td>
+		<td width="60%"> <input type="text" name="c" placeholder="Danger Level" required="required" /></td>
+		</tr>
+		<tr><td>&nbsp</td><td>&nbsp</td><tr>
+		<tr>
+		<td width="40%" style="text-align: right"> Days Above Danger Level</td>
+		<td width="60%"> <input type="text" name="dadl" placeholder="Days Above Danger Level" required="required" /></td>
+		</tr>
+		<tr><td>&nbsp</td><td>&nbsp</td><tr>
+		<tr>
+		<td width="40%" style="text-align: right"> Peak Water Level of the Year(m)</td>
+		<td width="60%"> <input type="text" name="pw" placeholder="Peak Water Level of the Year" required="required" /></td>
+		</tr>
+		<tr><td>&nbsp</td><td>&nbsp</td><tr>
+		<tr>
+		<td width="40%" style="text-align: right"> PLCrossedDL(cm)</td>
+		<td width="60%"> <input type="text" name="PLCrossedDL" placeholder="PLCrossedDL" required="required" /></td>
+		</tr>
+		<tr><td>&nbsp</td><td>&nbsp</td><tr>
+		<tr>
+		<td width="40%" style="text-align: right"> Annual Rainfall(mm)</td>
+		<td width="60%"> <input type="text" name="ar" placeholder="Annual Rainfall" required="required" /></td>
+		</tr>
+</table>
+		<br><br>
+		&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-primary btn-block btn-large">See Flood Condition</button>
+	</form>
+
+   <br>
+   <br>
+  <div style="align:right"> 
+   {{ prediction_text }}
+  </div> 
+
+ </div>
+
+
+</body>
+
+
+</html>
